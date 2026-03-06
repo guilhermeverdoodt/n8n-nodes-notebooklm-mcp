@@ -98,14 +98,19 @@ async def rest_list_notebooks(request: Request) -> JSONResponse:
         return JSONResponse({"error": str(e)}, status_code=500)
 
 
-@mcp.custom_route("/api/query", methods=["POST"])
+@mcp.custom_route("/api/query", methods=["GET", "POST"])
 async def rest_query(request: Request) -> JSONResponse:
-    """REST endpoint to query a notebook."""
+    """REST endpoint to query a notebook. Accepts GET (query params) or POST (JSON body)."""
     from .tools.chat import notebook_query
     try:
-        body = await request.json()
-        notebook_id = body.get("notebook_id")
-        query = body.get("query")
+        if request.method == "GET":
+            notebook_id = request.query_params.get("notebook_id")
+            query = request.query_params.get("query")
+        else:
+            body = await request.json()
+            notebook_id = body.get("notebook_id")
+            query = body.get("query")
+
         if not notebook_id or not query:
             return JSONResponse({"error": "Missing notebook_id or query"}, status_code=400)
         

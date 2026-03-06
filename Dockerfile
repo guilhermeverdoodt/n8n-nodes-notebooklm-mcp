@@ -22,4 +22,4 @@ EXPOSE 8000
 
 # Run the server in HTTP mode
 # NOTE: NOTEBOOKLM_COOKIES env var must be provided for authentication
-CMD ["notebooklm-mcp", "--transport", "http", "--port", "8000"]
+CMD ["notebooklm-mcp", "--transport", "http", "--host", "0.0.0.0", "--port", "8000"]

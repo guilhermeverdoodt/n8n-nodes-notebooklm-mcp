@@ -9,9 +9,9 @@
     "google"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/jacob-bd/notebooklm-mcp-cli",
+  "homepage": "https://github.com/guilhermeverdoodt/n8n-nodes-notebooklm-mcp",
   "author": {
-    "name": "NotebookLM MCP Team"
+    "name": "Guilherme Verdoodt by Kortx"
   },
   "main": "dist/index.js",
   "files": [

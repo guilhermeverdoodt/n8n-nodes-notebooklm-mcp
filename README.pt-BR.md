@@ -141,6 +141,50 @@ Isso permite que seu agente sempre aponte para o conhecimento correto, mesmo que
 
 ---
 
+## 🔧 Solução de Problemas
+
+### ❌ `Service is not reachable` (Easypanel)
+
+O servidor está vinculando em `127.0.0.1` dentro do container. Certifique-se de que o CMD do `Dockerfile` inclui `--host 0.0.0.0`:
+
+```
+CMD ["notebooklm-mcp", "--transport", "http", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+### ❌ `Not Acceptable: Client must accept text/event-stream`
+
+Ocorre quando o nó n8n faz requisições sem o header `Accept` necessário para o protocolo MCP. **Atualize o nó** para a versão mais recente:
+
+- Via Community Nodes: **Desinstalar → Reinstalar** `n8n-nodes-notebooklm`.
+- Em desenvolvimento local: execute `npm run build` e reinicie o n8n.
+
+### ❌ `AttributeError: 'FastMCP' object has no attribute 'starlette_app'`
+
+A versão do `FastMCP` instalada via `pip` no Docker usa `app` em vez de `starlette_app`. Isso está corrigido na versão `>= 0.1.0` deste pacote.
+
+### ✅ Testando Sem o Nó n8n
+
+Você pode validar que o servidor está funcionando usando os endpoints REST diretamente:
+
+```bash
+# Health check
+curl https://seu-dominio.easypanel.host/health
+
+# Listar notebooks (adicione -H "X-API-Key: sua-chave" se configurado)
+curl https://seu-dominio.easypanel.host/api/notebooks
+```
+
+### 📦 Aplicando Atualizações do Nó n8n
+
+O nó n8n não se atualiza automaticamente. Após qualquer mudança de código, publique uma nova versão no npm e reinstale via Community Nodes:
+
+```bash
+npm version patch   # incrementar versão
+npm publish --access public
+```
+
+---
+
 ## Licença
 
 [MIT](LICENSE)

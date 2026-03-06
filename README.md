@@ -4,6 +4,27 @@ This is an n8n community node that allows you to interact with Google NotebookLM
 
 ---
 
+## ⚡ Quick Start (Easy Mode)
+
+For users who want to get up and running in minutes:
+
+### 1. Deploy the Server (VPS)
+
+If you use **Easypanel**, you can use our **1-Click Blueprint**:
+
+1. In your Easypanel, go to **Projects** -> **Create New**.
+2. Select **App** -> **Github**.
+3. Use this repo: `guilhermeverdoodt/n8n-nodes-notebooklm-mcp`
+4. In **Environment Variables**, paste your Google Cookies and a secret API Key.
+
+_Check [easypanel-blueprint.json](./easypanel-blueprint.json) for reference._
+
+### 2. Install the Node (n8n)
+
+In your n8n: **Settings** -> **Community Nodes** -> **Install** -> `n8n-nodes-notebooklm`.
+
+---
+
 ## 🏁 Overview: NotebookLM + n8n Integration
 
 This project provides a complete and secure bridge between Google NotebookLM's capabilities and n8n.

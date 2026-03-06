@@ -1,0 +1,26 @@
+{
+  "name": "NotebookLM MCP Server",
+  "description": "Powerful MCP server for Google NotebookLM with n8n integration.",
+  "services": [
+    {
+      "type": "app",
+      "name": "notebooklm-mcp",
+      "image": "python:3.11-slim",
+      "source": {
+        "type": "github",
+        "repository": "guilhermeverdoodt/n8n-nodes-notebooklm-mcp",
+        "branch": "main"
+      },
+      "build": {
+        "method": "dockerfile"
+      },
+      "env": "NOTEBOOKLM_COOKIES=COLE_SEUS_COOKIES_AQUI\nNOTEBOOKLM_API_KEY=CRIE_UMA_CHAVE_AQUI",
+      "ports": [
+        {
+          "published": 8000,
+          "target": 8000
+        }
+      ]
+    }
+  ]
+}

@@ -59,6 +59,7 @@ export async function notebookLmMcpRequest(
 
 	const headers: { [key: string]: string } = {
 		'Content-Type': 'application/json',
+		'Accept': 'application/json, text/event-stream',
 	};
 
 	if (credentials.apiKey) {

@@ -61,14 +61,27 @@ This node uses a **NotebookLM MCP API** credential type for security.
 
 ---
 
-## 🚢 VPS Deployment (Easypanel)
+## 🚢 VPS Deployment (Easypanel + GitHub Integration)
 
-1. **Create App**: Choose "App" -> "Github" or "Git Repository".
-2. **Build Config**: Build Method: `Dockerfile`, Context: `./`, Path: `Dockerfile`.
-3. **Environment Variables**:
+This is the recommended way to host your own private NotebookLM MCP server:
+
+1. **Connect GitHub**: In Easypanel, go to **Settings** and ensure your **GitHub Token** is configured (required for private repos).
+2. **Create App**: Choose **App** -> **Github**.
+3. **App Details**:
+   - **Repository**: `guilhermeverdoodt/n8n-nodes-notebooklm-mcp` (or your fork)
+   - **Branch**: `main`
+   - **Build Path**: `/`
+4. **Build Config**:
+   - **Build Method**: `Dockerfile`
+   - **Docker Context**: `./`
+   - **Dockerfile Path**: `Dockerfile`
+5. **Environment Variables**:
    - `NOTEBOOKLM_COOKIES`: Copy from your local `cookies.json`.
-   - `NOTEBOOKLM_API_KEY`: Set a strong secret key.
-4. **Networking**: Port `8000`.
+   - `NOTEBOOKLM_API_KEY`: Set a strong secret key for authentication.
+6. **Networking**:
+   - **Port**: `8000`
+   - **Domain**: Define your subdomain (e.g., `mcp.your-domain.com`).
+   - (Optional) Enable **Basic Auth** middleware for extra security.
 
 ---
 

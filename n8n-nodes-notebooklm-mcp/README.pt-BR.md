@@ -94,8 +94,8 @@ Esta é a maneira recomendada de hospedar seu próprio servidor NotebookLM MCP p
    - **Build Path**: `/`
 4. **Configuração de Build**:
    - **Build Method**: `Dockerfile`
-   - **Docker Context**: `./`
-   - **Dockerfile Path**: `Dockerfile`
+   - **Docker Context**: `./n8n-nodes-notebooklm-mcp`
+   - **Dockerfile Path**: `n8n-nodes-notebooklm-mcp/Dockerfile`
 5. **Variáveis de Ambiente**:
    - `NOTEBOOKLM_COOKIES`: Copie do seu arquivo `cookies.json` local.
    - `NOTEBOOKLM_API_KEY`: Defina uma chave secreta forte para autenticação.

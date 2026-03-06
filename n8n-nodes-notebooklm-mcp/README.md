@@ -96,8 +96,8 @@ This is the recommended way to host your own private NotebookLM MCP server:
    - **Build Path**: `/`
 4. **Build Config**:
    - **Build Method**: `Dockerfile`
-   - **Docker Context**: `./`
-   - **Dockerfile Path**: `Dockerfile`
+   - **Docker Context**: `./n8n-nodes-notebooklm-mcp`
+   - **Dockerfile Path**: `n8n-nodes-notebooklm-mcp/Dockerfile`
 5. **Environment Variables**:
    - `NOTEBOOKLM_COOKIES`: Copy from your local `cookies.json`.
    - `NOTEBOOKLM_API_KEY`: Set a strong secret key for authentication.

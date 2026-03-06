@@ -8,7 +8,7 @@
       "image": "python:3.11-slim",
       "source": {
         "type": "github",
-        "repository": "guilhermeverdoodt/n8n-nodes-notebooklm-mcp",
+        "repository": "guilhermeverdoodt/kortx",
         "branch": "main"
       },
       "build": {

@@ -1,5 +1,7 @@
 # n8n-nodes-notebooklm
 
+[Português (Brasil)](./README.pt-BR.md) | English
+
 This is an n8n community node that allows you to interact with Google NotebookLM via an [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server.
 
 ---

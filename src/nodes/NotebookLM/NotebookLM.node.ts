@@ -484,7 +484,30 @@ export class NotebookLM implements INodeType {
 				}
 
 				const response = await notebookLmMcpRequest.call(this, toolName, args, i);
-				returnData.push({ json: response });
+
+				// Smart flattening: If the response contains a known list, return items individually
+				// This makes it much easier to use in n8n (filters, loops, etc.)
+				const listKeys = ['notebooks', 'sources', 'notes', 'jobs', 'artifacts'];
+				let flattened = false;
+
+				for (const key of listKeys) {
+					if (response && Array.isArray(response[key])) {
+						for (const listItem of response[key]) {
+							// Merge global status/metadata if helpful
+							const itemData = {
+								...(listItem as IDataObject),
+								_parent_status: response.status,
+							};
+							returnData.push({ json: itemData });
+						}
+						flattened = true;
+						break;
+					}
+				}
+
+				if (!flattened) {
+					returnData.push({ json: response });
+				}
 			} catch (error) {
 				if (this.continueOnFail()) {
 					returnData.push({ json: { error: error.message } });

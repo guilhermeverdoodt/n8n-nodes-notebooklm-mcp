@@ -80,7 +80,10 @@ class APIKeyMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
 # Adiciona o middleware ao app Starlette do FastMCP
-mcp.starlette_app.add_middleware(APIKeyMiddleware)
+# Diferentes versões do FastMCP expõem o app Starlette com nomes diferentes.
+_starlette_app = getattr(mcp, 'starlette_app', None) or getattr(mcp, 'app', None)
+if _starlette_app is not None:
+    _starlette_app.add_middleware(APIKeyMiddleware)
 
 
 

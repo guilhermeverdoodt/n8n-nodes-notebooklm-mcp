@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-notebooklm",
+  "name": "n8n-nodes-notebooklm-mcp",
   "version": "0.1.0",
   "description": "n8n node for Google NotebookLM (via MCP server)",
   "keywords": [
@@ -12,7 +12,7 @@
   "homepage": "https://github.com/guilhermeverdoodt/n8n-nodes-notebooklm-mcp#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/guilhermeverdoodt/n8n-nodes-notebooklm-mcp.git"
+    "url": "git+https://github.com/guilhermeverdoodt/n8n-nodes-notebooklm-mcp.git"
   },
   "author": {
     "name": "Guilherme Verdoodt by Kortx"

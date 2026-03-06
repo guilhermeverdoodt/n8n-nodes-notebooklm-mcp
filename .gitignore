@@ -8,3 +8,4 @@ dist
 # Evitar subir cookies ou configs locais se houver
 cookies.json
 .notebooklm-mcp-cli/
+cookies.json

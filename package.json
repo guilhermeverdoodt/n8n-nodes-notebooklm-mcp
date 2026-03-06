@@ -9,7 +9,12 @@
     "google"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/guilhermeverdoodt/n8n-nodes-notebooklm-mcp",
+  "homepage": "https://github.com/guilhermeverdoodt/kortx/tree/main/n8n-nodes-notebooklm-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guilhermeverdoodt/kortx.git",
+    "directory": "n8n-nodes-notebooklm-mcp"
+  },
   "author": {
     "name": "Guilherme Verdoodt by Kortx"
   },

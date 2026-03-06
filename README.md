@@ -127,6 +127,22 @@ npm link n8n-nodes-notebooklm
 
 ---
 
+## 🤖 AI Automation Guide
+
+This node is optimized for AI Agents and automation. Use **Smart List Flattening** to connect your agent to your NotebookLM knowledge effectively:
+
+### Dynamic Knowledge Selection
+
+Instead of hardcoding IDs, you can find notebooks by their name:
+
+1. **List Notebooks**: Use the `Notebook: List` operation.
+2. **Filter**: Add a native n8n **Filter** node to match the `title` (e.g., _title equals "My Knowledge Base"_).
+3. **Connect Agent**: In the next node (e.g., `Notebook: Query`), set the **Notebook ID** as an expression: `{{ $json.id }}`.
+
+This allows your agent to always point to the correct knowledge even if you rename or recreate notebooks.
+
+---
+
 ## License
 
 [MIT](LICENSE)

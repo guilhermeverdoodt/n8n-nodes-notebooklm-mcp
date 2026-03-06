@@ -125,6 +125,22 @@ npm link n8n-nodes-notebooklm
 
 ---
 
+## 🤖 Guia de Automação com IA
+
+Este nó foi otimizado para Agentes de IA e automação. Use o **Smart List Flattening** para conectar seu agente ao conhecimento do NotebookLM de forma eficaz:
+
+### Seleção Dinâmica de Conhecimento
+
+Em vez de fixar IDs (hardcoding), você pode encontrar notebooks pelo nome:
+
+1. **Listar Notebooks**: Use a operação `Notebook: List`.
+2. **Filtrar**: Adicione um nó de **Filter** nativo do n8n para comparar o `title` (ex: _title é igual a "Meu Conhecimento"_).
+3. **Conectar Agente**: No próximo nó (ex: `Notebook: Query`), defina o **Notebook ID** como uma expressão: `{{ $json.id }}`.
+
+Isso permite que seu agente sempre aponte para o conhecimento correto, mesmo que você renomeie ou recrie os notebooks.
+
+---
+
 ## Licença
 
 [MIT](LICENSE)

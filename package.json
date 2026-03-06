@@ -1,0 +1,40 @@
+{
+  "name": "n8n-nodes-notebooklm",
+  "version": "0.1.0",
+  "description": "n8n node for Google NotebookLM (via MCP server)",
+  "keywords": [
+    "n8n-community-node-package",
+    "notebooklm",
+    "mcp",
+    "google"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jacob-bd/notebooklm-mcp-cli",
+  "author": {
+    "name": "NotebookLM MCP Team"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "nodes": [
+      "dist/nodes/NotebookLM/NotebookLM.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/NotebookLMApi.credentials.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^0.111.0",
+    "typescript": "~4.8.4"
+  }
+}

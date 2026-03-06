@@ -14,7 +14,7 @@ Se você usa o **Easypanel**, pode usar nosso **Blueprint de 1-Clique**:
 
 1. No seu Easypanel, vá em **Projects** -> **Create New**.
 2. Selecione **App** -> **Github**.
-3. Use este repositório: `guilhermeverdoodt/kortx`
+3. Use este repositório: `guilhermeverdoodt/n8n-nodes-notebooklm-mcp`
 4. Nas **Variáveis de Ambiente**, cole seus cookies do Google e uma Chave de API secreta.
 
 _Consulte [easypanel-blueprint.json](./easypanel-blueprint.json) para referência._
